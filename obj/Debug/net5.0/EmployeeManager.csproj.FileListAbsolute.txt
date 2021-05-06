@@ -1,0 +1,16 @@
+C:\Users\hungnva\Desktop\show\EmployeeManager\bin\Debug\net5.0\EmployeeManager.exe
+C:\Users\hungnva\Desktop\show\EmployeeManager\bin\Debug\net5.0\EmployeeManager.deps.json
+C:\Users\hungnva\Desktop\show\EmployeeManager\bin\Debug\net5.0\EmployeeManager.runtimeconfig.json
+C:\Users\hungnva\Desktop\show\EmployeeManager\bin\Debug\net5.0\EmployeeManager.runtimeconfig.dev.json
+C:\Users\hungnva\Desktop\show\EmployeeManager\bin\Debug\net5.0\EmployeeManager.dll
+C:\Users\hungnva\Desktop\show\EmployeeManager\bin\Debug\net5.0\ref\EmployeeManager.dll
+C:\Users\hungnva\Desktop\show\EmployeeManager\bin\Debug\net5.0\EmployeeManager.pdb
+C:\Users\hungnva\Desktop\show\EmployeeManager\obj\Debug\net5.0\EmployeeManager.csprojAssemblyReference.cache
+C:\Users\hungnva\Desktop\show\EmployeeManager\obj\Debug\net5.0\EmployeeManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hungnva\Desktop\show\EmployeeManager\obj\Debug\net5.0\EmployeeManager.AssemblyInfoInputs.cache
+C:\Users\hungnva\Desktop\show\EmployeeManager\obj\Debug\net5.0\EmployeeManager.AssemblyInfo.cs
+C:\Users\hungnva\Desktop\show\EmployeeManager\obj\Debug\net5.0\EmployeeManager.csproj.CoreCompileInputs.cache
+C:\Users\hungnva\Desktop\show\EmployeeManager\obj\Debug\net5.0\EmployeeManager.dll
+C:\Users\hungnva\Desktop\show\EmployeeManager\obj\Debug\net5.0\ref\EmployeeManager.dll
+C:\Users\hungnva\Desktop\show\EmployeeManager\obj\Debug\net5.0\EmployeeManager.pdb
+C:\Users\hungnva\Desktop\show\EmployeeManager\obj\Debug\net5.0\EmployeeManager.genruntimeconfig.cache
