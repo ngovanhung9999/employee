@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hungnva\\Desktop\\show\\EmployeeManager\\EmployeeManager.csproj": {}
+    "C:\\Users\\ngova\\Desktop\\manager\\employee\\EmployeeManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hungnva\\Desktop\\show\\EmployeeManager\\EmployeeManager.csproj": {
+    "C:\\Users\\ngova\\Desktop\\manager\\employee\\EmployeeManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hungnva\\Desktop\\show\\EmployeeManager\\EmployeeManager.csproj",
+        "projectUniqueName": "C:\\Users\\ngova\\Desktop\\manager\\employee\\EmployeeManager.csproj",
         "projectName": "EmployeeManager",
-        "projectPath": "C:\\Users\\hungnva\\Desktop\\show\\EmployeeManager\\EmployeeManager.csproj",
-        "packagesPath": "C:\\Users\\hungnva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hungnva\\Desktop\\show\\EmployeeManager\\obj\\",
+        "projectPath": "C:\\Users\\ngova\\Desktop\\manager\\employee\\EmployeeManager.csproj",
+        "packagesPath": "C:\\Users\\ngova\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ngova\\Desktop\\manager\\employee\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\hungnva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ngova\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

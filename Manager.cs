@@ -37,23 +37,23 @@ namespace EmployeeManager
             }
         }
 
-        public override void input()
+        public override void Input()
         {
-            base.input();
+            base.Input();
             Console.Write("Nhập số lượng nhân viên quản lý: ");
             int number;
             Int32.TryParse(Console.ReadLine(), out number);
             NumberOfEmployee = number;
         }
 
-        public override double salary()
+        public override double Salary()
         {
             return CoefficientsSalary * 1500000;
         }
 
         public override string ToString()
         {
-            return base.ToString() + $" - Lương:{salary()} - Số lượng nhân viên:{NumberOfEmployee}";
+            return base.ToString() + $" - Lương:{Salary()} - Số lượng nhân viên:{NumberOfEmployee}";
         }
     }
 }

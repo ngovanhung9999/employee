@@ -13,7 +13,7 @@ namespace EmployeeManager
         protected double _CoefficientsSalary;
         public Person()
         {
-
+            
         }
         public Person(string fullName, string dateOfBirth, double coefficientsSalary)
         {
@@ -57,7 +57,7 @@ namespace EmployeeManager
             }
         }
 
-        public virtual void input()
+        public virtual void Input()
         {
             Console.Write("Nhập họ tên: ");
             FullName = Console.ReadLine();
@@ -72,6 +72,6 @@ namespace EmployeeManager
         {
             return $"Họ tên:{FullName} - Ngày sinh:{DateOfBirth} - Hệ số lương:{CoefficientsSalary}";
         }
-        public abstract Double salary();
+        public abstract Double Salary();
     }
 }

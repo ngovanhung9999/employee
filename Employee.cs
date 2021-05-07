@@ -27,21 +27,21 @@ namespace EmployeeManager
             { _Department = value; }
         }
 
-        public override void input()
+        public override void Input()
         {
-            base.input();
+            base.Input();
             Console.Write("Nhập phòng ban: ");
             Department = Console.ReadLine();
         }
 
-        public override double salary()
+        public override double Salary()
         {
             return CoefficientsSalary * 1500000;
         }
 
         public override string ToString()
         {
-            return base.ToString() + $"- Lương:{salary()} - Phòng ban:{Department}";
+            return base.ToString() + $"- Lương:{Salary()} - Phòng ban:{Department}";
         }
     }
 }

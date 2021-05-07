@@ -37,23 +37,23 @@ namespace EmployeeManager
             }
         }
 
-        public override void input()
+        public override void Input()
         {
-            base.input();
+            base.Input();
             Console.Write("Nhập hệ số vị trí: ");
             double number;
             Double.TryParse(Console.ReadLine(), out number);
             PositionCoefficient = number;
         }
 
-        public override double salary()
+        public override double Salary()
         {
             return CoefficientsSalary*PositionCoefficient * 1500000;
         }
 
         public override string ToString()
         {
-            return base.ToString() + $" - Lương:{salary()} - Hệ số vị trí:{PositionCoefficient}";
+            return base.ToString() + $" - Lương:{Salary()} - Hệ số vị trí:{PositionCoefficient}";
         }
     }
 }
