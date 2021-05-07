@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmployeeManager
 {
@@ -14,9 +10,18 @@ namespace EmployeeManager
 
         }
 
-        public President(string fullName, string dateOfBirth, double coefficientsSalary, double positionCoefficient) : base(fullName, dateOfBirth, coefficientsSalary)
+        public President(string fullName, string dateOfBirth, double coefficientsSalary, double? positionCoefficient)
+        : base(fullName, dateOfBirth, coefficientsSalary)
         {
-            _PositionCoefficient = positionCoefficient;
+            if (positionCoefficient != null)
+            {
+                _PositionCoefficient = positionCoefficient.Value;
+            }
+            else
+            {
+                _PositionCoefficient = 1;
+            }
+
         }
 
         public double PositionCoefficient
@@ -48,12 +53,12 @@ namespace EmployeeManager
 
         public override double Salary()
         {
-            return CoefficientsSalary*PositionCoefficient * 1500000;
+            return CoefficientsSalary * PositionCoefficient * 1500000;
         }
 
         public override string ToString()
         {
-            return base.ToString() + $" - Lương:{Salary()} - Hệ số vị trí:{PositionCoefficient}";
+            return base.ToString() + $" - Lương:{String.Format("{0:0}", Salary())}đ - Hệ số vị trí:{PositionCoefficient}";
         }
     }
 }

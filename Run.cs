@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmployeeManager
 {
@@ -24,7 +21,7 @@ namespace EmployeeManager
                 {
                     case "1":
                         Console.WriteLine("-------Thêm nhân viên");
-                        manager.Add();
+                        manager.AddEmployee();
                         break;
                     case "2":
                         Console.WriteLine("-------Xem danh sách nhân viên");
@@ -33,37 +30,31 @@ namespace EmployeeManager
                     case "3":
                         Console
                             .WriteLine("-------Xem nhân viên lương cao nhất");
-
-                        //manager.highestSalary();
+                        Console.WriteLine(manager.HighestSalary().ToString());
                         break;
-                    case "4":
-                        Console
-                            .WriteLine("-------Xem nhân viên sinh nhật trong tháng");
 
-                        // int month = 0;
-                        // try {
-                        // 	System.out.print("Nhập Tháng Sinh Nhật: ");
-                        // 	month = Integer.parseInt(scanner.nextLine());
-                        // } catch (Exception e) {
-                        // 	e.printStackTrace();
-                        // }
-                        // ArrayList<Person> listp = manager.birthdaysOfTheMonth(month);
-                        // if (listp.size() == 0) {
-                        // 	System.out.println("Không tìm thấy nhân viên có sinh nhật trong tháng " + month);
-                        // } else {
-                        // 	manager.show(listp);
-                        // }
+                    case "4":
+                        Console.WriteLine("-------Xem nhân viên có phòng ban");
+                        Console.Write("Nhập phòng ban: ");
+                        string department = Console.ReadLine();
+                        List<Person> listp2 = manager.FindTheDepartment(department);
+                        if (listp2.Count == 0)
+                        {
+                            Console.WriteLine("Không tìm thấy nhân viên thuộc phòng ban: " + department);
+                        }
+                        else
+                        {
+                            manager.Show(listp2);
+                        }
                         break;
                     case "5":
-                        // System.out.println("-------Xem Nhân Viên Có Phòng Ban");
-                        // System.out.print("Nhập Phòng Ban: ");
-                        // str = scanner.nextLine();
-                        // ArrayList<Person> listp2 = manager.findTheDepartment(str);
-                        // if (listp2.size() == 0) {
-                        // 	System.out.println("Không tìm thấy nhân viên thuộc phòng ban " + str);
-                        // } else {
-                        // 	manager.show(listp2);
-                        // }
+                        Console.WriteLine("-------Xem sắp xếp theo họ tên");
+                        if( manager.SortEmployee()){
+                             Console.WriteLine("Sắp xếp theo họ tên thành công");
+                             manager.Show();
+                        }else{
+                             Console.WriteLine("Lỗi");
+                        }
                         break;
                     case "0":
                         anchor = false;
@@ -82,8 +73,8 @@ namespace EmployeeManager
             Console.WriteLine("\t1. Thêm một nhân viên");
             Console.WriteLine("\t2. Xem danh sách");
             Console.WriteLine("\t3. Xem nhân viên có lương cao nhất");
-            Console.WriteLine("\t4. Xem nhân viên có sinh nhật trong tháng");
-            Console.WriteLine("\t5. Xem nhân viên có phòng ban");
+            Console.WriteLine("\t4. Xem nhân viên có phòng ban");
+            Console.WriteLine("\t5. Xem sắp xếp theo họ tên");
             Console.WriteLine("\t0. Thoát");
         }
     }

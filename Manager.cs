@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmployeeManager
 {
@@ -13,8 +9,8 @@ namespace EmployeeManager
         {
 
         }
-
-        public Manager(string fullName, string dateOfBirth, double coefficientsSalary, int numberOfPersonnel) : base(fullName, dateOfBirth, coefficientsSalary)
+        public Manager(string fullName, string dateOfBirth, double? coefficientsSalary, int numberOfPersonnel) 
+        : base(fullName, dateOfBirth, coefficientsSalary)
         {
             _NumberOfEmployee = numberOfPersonnel;
         }
@@ -53,7 +49,7 @@ namespace EmployeeManager
 
         public override string ToString()
         {
-            return base.ToString() + $" - Lương:{Salary()} - Số lượng nhân viên:{NumberOfEmployee}";
+            return base.ToString() + $" - Lương:{String.Format("{0:0}", Salary())}đ - Số lượng nhân viên:{NumberOfEmployee}";
         }
     }
 }

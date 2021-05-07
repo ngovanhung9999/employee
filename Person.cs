@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System.Text.RegularExpressions;
 namespace EmployeeManager
 {
     public abstract class Person
@@ -13,14 +9,20 @@ namespace EmployeeManager
         protected double _CoefficientsSalary;
         public Person()
         {
-            
+
         }
-        public Person(string fullName, string dateOfBirth, double coefficientsSalary)
+        public Person(string fullName, string dateOfBirth, double? coefficientsSalary)
         {
             _FullName = fullName;
             _DateOfBirth = dateOfBirth;
-            _CoefficientsSalary = coefficientsSalary;
-
+            if (coefficientsSalary != null)
+            {
+                _CoefficientsSalary = coefficientsSalary.Value;
+            }
+            else
+            {
+                _CoefficientsSalary = 1;
+            }
         }
 
         public string FullName
@@ -36,7 +38,16 @@ namespace EmployeeManager
             get
             { return _DateOfBirth; }
             set
-            { _DateOfBirth = value; }
+            {
+                if (Regex.IsMatch(value, @"^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"))
+                {
+                    _DateOfBirth = value;
+                }
+                else
+                {
+                    _DateOfBirth="00/00/0000";
+                }
+            }
         }
 
         public double CoefficientsSalary

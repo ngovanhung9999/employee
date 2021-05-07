@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace EmployeeManager
 {
     public class Employee : Person
@@ -14,7 +9,8 @@ namespace EmployeeManager
 
         }
 
-        public Employee(string fullName, string dateOfBirth, double coefficientsSalary, string department) : base(fullName, dateOfBirth, coefficientsSalary)
+        public Employee(string fullName, string dateOfBirth, double? coefficientsSalary, string department) 
+        : base(fullName, dateOfBirth, coefficientsSalary)
         {
             _Department = department;
         }
@@ -41,7 +37,7 @@ namespace EmployeeManager
 
         public override string ToString()
         {
-            return base.ToString() + $"- Lương:{Salary()} - Phòng ban:{Department}";
+            return base.ToString() + $"- Lương:{String.Format("{0:0}", Salary())}đ - Phòng ban:{Department}";
         }
     }
 }

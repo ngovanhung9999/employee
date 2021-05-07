@@ -1,45 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace EmployeeManager
 {
-    public class EmployeeManager
+    public class EmployeeManager : List<Person>
     {
-        private List<Person> _ListEmployee;
-
-        public EmployeeManager(List<Person> list)
-        {
-            _ListEmployee = list;
-        }
-
-        public List<Person> ListEmployee
-        {
-            get
-            {
-                return _ListEmployee;
-            }
-            set
-            {
-                _ListEmployee = value;
-            }
-        }
-
         public EmployeeManager()
         {
-            _ListEmployee = new List<Person>();
             Person p1 = new Manager("nguyen van a", "1/6/1997", 2.5, 400);
-            _ListEmployee.Add (p1);
-            Person p2 = new President("ngo van hung", null, 3.1, 2.1);
-            _ListEmployee.Add (p2);
+            Person p2 = new President("nguyen van c", "2/6/1997", 3.1, 2.6);
             Person p3 =
-                new Employee("nguyen van b", "3/10/1995", 2.1, "ke toan");
-            _ListEmployee.Add (p3);
+                new Employee("nguyen van b", "3/6/1997", null, "ke toan");
+            Person p4 =
+           new Employee("nguyen van e", "4/6/1997", 2.1, "kinh doanh");
+            this.Add(p2);
+            this.Add(p1);
+            this.Add(p3);
+            this.Add(p4);
         }
 
-        public void Add()
+        public void AddEmployee()
         {
             string str = null;
             bool anchor = true;
@@ -55,19 +35,19 @@ namespace EmployeeManager
                     case "1":
                         Person president = new President();
                         president.Input();
-                        _ListEmployee.Add (president);
+                        this.Add(president);
                         anchor = false;
                         break;
                     case "2":
                         Person manager = new Manager();
                         manager.Input();
-                        _ListEmployee.Add (manager);
+                        this.Add(manager);
                         anchor = false;
                         break;
                     case "3":
                         Person employee = new Employee();
                         employee.Input();
-                        _ListEmployee.Add (employee);
+                        this.Add(employee);
                         anchor = false;
                         break;
                     default:
@@ -81,7 +61,7 @@ namespace EmployeeManager
         public void Show()
         {
             int number = 1;
-            foreach (var item in ListEmployee)
+            foreach (var item in this)
             {
                 Console.Write($"\t-STT:{number}  ");
                 Console.WriteLine(item.ToString());
@@ -97,6 +77,38 @@ namespace EmployeeManager
                 Console.Write($"\t-STT:{number}  ");
                 Console.WriteLine(item.ToString());
                 number++;
+            }
+        }
+        public Person HighestSalary()
+        {
+            double max = this.Max(person => person.Salary());
+            var result = from person in this
+                         where person.Salary() == max
+                         select person;
+            return result.ToArray()[0];
+        }
+
+        public List<Person> FindTheDepartment(string department)
+        {
+            var result = from person in this
+                         where person.GetType() == typeof(Employee)
+                         select person;
+            var employees = result.Where(employees =>
+            {
+                Employee temp = (Employee)employees;
+                return temp.Department.Equals(department);
+            });
+            return employees.ToList();
+        }
+        public bool SortEmployee()
+        {
+            try
+            {
+                this.Sort(new SortByName());
+                return true;
+            }catch(Exception e){
+                Console.WriteLine(e.Message);
+                return false;
             }
         }
     }
